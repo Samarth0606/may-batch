@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * 0.9)
+}
+
+.board{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3,auto);
+    gap: 0;
+}
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+    position: relative;
+}
+
+
+.cell:first-child,
+.cell:nth-of-type(2),
+.cell:nth-of-type(3){
+    border-top: none;
+}
+.cell:first-child,
+.cell:nth-of-type(4),
+.cell:nth-of-type(7){
+    border-left: none;
+}
+.cell:nth-of-type(3),
+.cell:nth-of-type(6),
+.cell:last-child{
+    border-right: none;
+}
+.cell:nth-of-type(7),
+.cell:nth-of-type(8),
+.cell:last-child{
+    border-bottom: none;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+/* --------------------------------- */
+.x::before,
+.x::after{
+    content: '';
+    height: var(--mark-size);
+    width: calc( var(--mark-size)*.15 );
+    background-color: black;
+    position: absolute;
+    right: 45%;
+    top: 7%;
+
+}
+
+.x::before{
+    transform: rotate(45deg);
+}
+.x::after{
+    transform: rotate(-45deg);
+}
+
+
+.circle::before,
+.circle::after{
+    content: "";
+    height: var(--mark-size);
+    width: var(--mark-size);
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+    right: 5%;
+    top: 5%;
+}
+.circle::after{
+    height: calc( var(--mark-size)*0.7 );
+    width: calc( var(--mark-size)*0.7 );
+    background-color: white;
+    right: 18%;
+    top: 18%;
+}
+
+/* -------------------------------- */
+.x , .circle{
+    cursor: not-allowed;
+}
+
+.winner-message{
+    display: none;
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 3rem;
+    gap: 10px;
+}
+
+.winner-message button{
+    font-size: 2.5rem;
+    border: 2px solid black;
+    padding: 1rem;
+    cursor: pointer;
+}
+.winner-message.show{
+    display: flex;
+}
+
+
+
