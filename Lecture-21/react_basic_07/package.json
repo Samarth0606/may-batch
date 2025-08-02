@@ -1,5 +1,5 @@
 {
-  "name": "react_basic_06",
+  "name": "react_basic_07",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "cors": "^2.8.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
