@@ -8,6 +8,8 @@ import Signin from './components/Signin.jsx';
 import Body from './components/Body.jsx';
 import Error from './components/Error.jsx';
 import RestaurantDetail from './components/RestaurantDetail.jsx';
+import Clock from './components/Clock.jsx';
+import Cart from './components/Cart.jsx';
 
 const appRouter = createBrowserRouter([
   {
@@ -21,6 +23,8 @@ const appRouter = createBrowserRouter([
        {path:"/signin" , element: <Signin /> },
       //  dynamic routing
        {path:"/restaurant/:idd" , element: <RestaurantDetail /> },
+       {path:"/clock" , element: <Clock /> },
+       {path:"/cart" , element: <Cart /> },
     ]  
   },
  
