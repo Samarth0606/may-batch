@@ -1,5 +1,6 @@
 const express =  require('express')
 const app =  express();
+const restaurantRoutes = require('./routes/restaurant.route')
 
 const mongoose = require('mongoose');
 // mongoose.connect('mongodb://127.0.0.1:27017/SWIGGY_BACKEND') //local db
@@ -12,6 +13,9 @@ mongoose.connect('mongodb+srv://samarthvohraindia:DFZ1pIfXPkrFJqOC@cluster0.lalf
     console.log(ERR , "ERROR");
 })
 
+app.use(express.json()) //middleware for req.body becoz by default req.body is undefined
+
+restaurantRoutes(app)
 
 app.get('/',(req,res)=>{res.send("Welcome to root route")})
 
