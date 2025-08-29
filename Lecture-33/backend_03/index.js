@@ -1,6 +1,6 @@
 const express =  require('express')
 const app =  express();
-
+const cors = require('cors')
 const mongoose = require('mongoose');
 const restaurantRoutes = require('./routes/restaurant.route')
 const userRoutes = require('./routes/user.route');
@@ -15,6 +15,7 @@ mongoose.connect('mongodb+srv://samarthvohraindia:DFZ1pIfXPkrFJqOC@cluster0.lalf
 })
 
 app.use(express.json()) //middleware for req.body becoz by default req.body is undefined
+app.use(cors())
 
 restaurantRoutes(app)
 userRoutes(app)
